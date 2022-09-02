@@ -1,10 +1,13 @@
 
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { Links } from '../components/Links'
-import {Headline} from '../components/Headline'
+import styles from 'src/components/Main/Main.module.css'
+import {Headline} from 'src/components/Headline'
+import { Links } from 'src/components/Links'
+import { useEffect } from 'react';
 
 export function Main(props) {
+
+
+
   return (
 
       <main className={styles.main}>
