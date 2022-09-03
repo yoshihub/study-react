@@ -23,15 +23,10 @@ const Home=(props) =>{
       <input type="text" value={props.text} onChange={props.handleChange}/>
       <button onClick={props.handleAdd}>追加</button>
       <ul>
-        {props.array.map(item=>{
-          return(
-            <li key={item}>{item}</li>
-          )
-        })}
+        {props.array.map((item,i)=><li key={i}>{item}</li>)}
       </ul>
 
       <Main page="index"/>
-
 
       <Footer/>
 
