@@ -1,7 +1,7 @@
 import styles from 'src/components/Headline/Headline.module.css'
 
 
-export function Headline(props) {
+export const Headline=(props)=> {
   return (
         <div>
         <h1 className={styles.title}>
@@ -9,8 +9,10 @@ export function Headline(props) {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing {props.children}
+          アイテムの数は {props.children}個です
         </p>
+
+        <button onClick={props.handleReduce}>減らす</button>
         </div>
 
   )
