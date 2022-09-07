@@ -2,7 +2,7 @@
 import styles from 'src/components/Main/Main.module.css'
 import {Headline} from 'src/components/Headline'
 import { Links } from 'src/components/Links'
-import { useEffect,useState,useCallback } from 'react';
+import { useState,useCallback } from 'react';
 
 const ITEMS=[
   {
@@ -36,7 +36,6 @@ export const Main=(props)=> {
   },[]);
 
   return (
-
       <main className={styles.main}>
         <Headline page={props.page} handleReduce={handleReduce}>
           <code className={styles.code}>{items.length}</code>
