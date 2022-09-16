@@ -16,6 +16,4 @@ export const UsePost=()=>{
           error:postError||userError,
           isLoading:!user&&!userError,
         };
-
-
   };

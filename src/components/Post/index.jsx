@@ -2,7 +2,6 @@ import Head from "next/head";
 import { UsePost } from "src/hooks/usePost";
 
 
-
 export const Post=() =>{
   const{post,user,error,isLoading}=UsePost()
 

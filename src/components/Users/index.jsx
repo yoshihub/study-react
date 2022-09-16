@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { usePosts } from "src/hooks/useFetchArray";
+import { useUsers } from "src/hooks/useFetchArray";
 
 
 
-export const Posts=() =>{
-  const{data,error,isLoading,isEmpty}=usePosts()
+export const Users=() =>{
+  const{data,error,isLoading,isEmpty}=useUsers()
 
   if(isLoading){
     return <div>ローデイング中です</div>;
@@ -20,11 +20,11 @@ export const Posts=() =>{
 
   return (
     <ol>
-      {data.map(post=>{
+      {data.map(user=>{
         return(
-          <li key={post.id}>
-            <Link href={`/posts/${post.id}`}>
-              <a>{post.title}</a>
+          <li key={user.id}>
+            <Link href={`/users/${user.id}`}>
+              <a>{user.name}</a>
             </Link>
           </li>
         );
