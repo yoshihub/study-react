@@ -1,11 +1,15 @@
 import Link from "next/link";
-import { useComments } from "src/hooks/useFetchArray";
+import { useCommentsByPostId } from "src/hooks/useFetchArray";
 
 
-export const CommentsComponent = () => {
-  const { data, error, isLoading, isEmpty } = useComments();
+export const CommentsByPostId=(props)=>{
+   const {data,
+    error,
+    isLoading,
+    isEmpty,
+  }=useCommentsByPostId(props.id);
 
-  if (isLoading) {
+    if (isLoading) {
     return <p>Loading...</p>;
   }
 
@@ -18,16 +22,19 @@ export const CommentsComponent = () => {
   }
 
   return (
-    <ul className="space-y-2">
+    <ol>
       {data.map((comment) => {
         return (
           <li key={comment.id} className="border-b pb-2">
             <Link href={`/comments/${comment.id}`}>
-              <a className="block hover:text-blue-500">{comment.body}</a>
+              <a className="block hover:text-blue-500">
+                {comment.body}
+              </a>
             </Link>
           </li>
         );
       })}
-    </ul>
+    </ol>
   );
-};
+
+}

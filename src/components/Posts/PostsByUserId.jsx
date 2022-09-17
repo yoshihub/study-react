@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { usePosts } from "src/hooks/useFetchArray";
+import { usePostsByUserId } from "src/hooks/useFetchArray";
 
 
 
-export const Posts=() =>{
-  const{data,error,isLoading,isEmpty}=usePosts()
+export const PostsByUserId=(props) =>{
+  const{data,error,isLoading,isEmpty}=usePostsByUserId(props.id)
 
   if(isLoading){
     return <div>ローデイング中です</div>;
